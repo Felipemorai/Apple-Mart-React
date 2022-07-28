@@ -5,18 +5,19 @@ import Home from './components/Home';
 import About from './components/About';
 import Product from './components/Product';
 import Contact from './components/Contact';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <>
-      <Switch>
-        <Route to="/" component={Home} />
-        <Route to="/products" component={Product} />
-        <Route to="/about" component={About} />
-        <Route to="/contact" component={Contact} />
-        <Redirect to="/" />
-      </Switch>
+      <Header/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Product />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Navigate to="/" />
+      </Routes>
     </>
   );
 }
