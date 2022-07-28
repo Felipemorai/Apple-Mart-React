@@ -10,7 +10,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 function App() {
   return (
     <>
-      <Header/>
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Product />} />
@@ -18,6 +18,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Navigate to="/" />
       </Routes>
+      <Footer />
     </>
   );
 }
